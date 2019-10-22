@@ -1,7 +1,12 @@
 import "styled-components/macro";
 import React, { memo } from "react";
 import { css } from "styled-components";
-import { Sidebar, SidebarHeader, SidebarMainBlock, SidebarFooter } from "./Sidebar";
+import {
+  Sidebar,
+  SidebarHeader,
+  SidebarMainBlock,
+  SidebarFooter
+} from "./Sidebar";
 import { BigLink } from "./BigLink";
 import useRouter from "use-react-router";
 import { useHistory } from "react-router-dom";
@@ -29,29 +34,30 @@ const SidebarContainer = ({ logout }) => {
       `}
     >
       <Sidebar>
-        <SidebarHeader onClick={onClick("/orders")}>Agno</SidebarHeader>
+        <SidebarHeader onClick={onClick("/dashboard/one")}>Agno</SidebarHeader>
         <SidebarMainBlock>
-          <BigLink active={isActive("/dashboard/one")} onClick={onClick("/dashboard/one")}>
+          <BigLink
+            active={isActive("/dashboard/one")}
+            onClick={onClick("/dashboard/one")}
+          >
             One
           </BigLink>
-          <BigLink active={isActive("/dashboard/two")} onClick={onClick("/dashboard/two")}>
+          <BigLink
+            active={isActive("/dashboard/two")}
+            onClick={onClick("/dashboard/two")}
+          >
             Two
           </BigLink>
-          <BigLink active={isActive("/dashboard/three")} onClick={onClick("/dashboard/three")}>
+          <BigLink
+            active={isActive("/dashboard/three")}
+            onClick={onClick("/dashboard/three")}
+          >
             Three
           </BigLink>
         </SidebarMainBlock>
         <SidebarFooter>
-          <button onClick={logout}>Logout</button>
+          <BigLink onClick={logout}>Logout</BigLink>
         </SidebarFooter>
-        {/* <SidebarSecondaryBlock>
-          <SmallLink
-            onClick={onClick('/company')}
-            active={isActive('/company')}
-          >
-            Company settings
-          </SmallLink>
-        </SidebarSecondaryBlock> */}
       </Sidebar>
     </div>
   );

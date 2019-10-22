@@ -20,10 +20,9 @@ export default function Home() {
     <div
       css={`
         display: flex;
-        flex-grow: 1;
+        flex: 1;
         flex-direction: row;
         height: 100%;
-        background-color: "#000";
       `}
     >
       <SidebarContainer logout={logoutHandle} />

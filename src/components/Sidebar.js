@@ -9,6 +9,7 @@ export const SidebarHeader = ({ children, onClick }) => (
       display: flex;
       margin: 1.25rem 0;
       cursor: pointer;
+      flex: 1;
     `}
   >
     <div
@@ -33,6 +34,7 @@ export const SidebarMainBlock = ({ children }) => (
       padding: 2.5rem 0;
       margin-right: 1rem;
       border-bottom: 1px solid "#000000";
+      flex: 5;
     `}
   >
     {children}
@@ -59,6 +61,7 @@ export const SidebarFooter = ({ children }) => (
       display: flex;
       flex-shrink: 0;
       flex-direction: column;
+      flex: 1;
     `}
   >
     {children}
@@ -69,6 +72,7 @@ export const Sidebar = ({ children }) => (
   <div
     css={css`
       display: flex;
+      flex: 1;
       flex-direction: column;
       flex-grow: 1;
       height: 100%;
