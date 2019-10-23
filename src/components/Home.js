@@ -20,21 +20,35 @@ export default function Home() {
     <div
       css={`
         display: flex;
-        flex: 1;
+        -webkit-box-flex: 1;
+        flex-grow: 1;
         flex-direction: row;
         height: 100%;
       `}
     >
       <SidebarContainer logout={logoutHandle} />
-      <Switch>
-        <Redirect from="/" exact to="/dashboard" />
-        <Redirect from="/dashboard" exact to="/dashboard/one" />
-        <Route path="/dashboard">
-          <Route path="/dashboard/one" component={One} />
-          <Route path="/dashboard/two" component={Two} />
-          <Route path="/dashboard/three" component={Three} />
-        </Route>
-      </Switch>
+      <div
+        css={css`
+          display: flex;
+          flex-direction: column;
+          min-height: 0;
+          min-width: 0;
+          overflow-y: auto;
+          flex-grow: 1;
+          flex: 1;
+          -webkit-overflow-scrolling: touch;
+        `}
+      >
+        <Switch>
+          <Redirect from="/" exact to="/dashboard" />
+          <Redirect from="/dashboard" exact to="/dashboard/one" />
+          <Route path="/dashboard">
+            <Route path="/dashboard/one" component={One} />
+            <Route path="/dashboard/two" component={Two} />
+            <Route path="/dashboard/three" component={Three} />
+          </Route>
+        </Switch>
+      </div>
     </div>
   );
 }

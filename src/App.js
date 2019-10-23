@@ -9,11 +9,13 @@ import NotFound from "./components/NotFound";
 const GlobalStyle = createGlobalStyle`
   html {
     height: 100%; 
+    width: 100%;
   }
   body {
     display: flex;
     flex:1;
     height: 100%;
+    width: 100%;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -25,7 +27,12 @@ const GlobalStyle = createGlobalStyle`
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
   }
- 
+  #root {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: 100%;
+  }
 `;
 
 const App = () => (

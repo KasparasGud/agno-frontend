@@ -4,12 +4,11 @@ import styled, { css } from "styled-components";
 export default function One() {
   return (
     <div
-      css={`
+      css={css`
         display: flex;
-        flex: 1;
         flex-grow: 1;
-        flex-direction: row;
-        height: 100%;
+        flex-shrink: 1;
+        background-color: "#FFF";
         width: 100%;
       `}
     >
