@@ -1,7 +1,7 @@
 import "styled-components/macro";
 import React, { useState } from "react";
-import { Redirect, Switch, Route, Link } from "react-router-dom";
-import styled, { css } from "styled-components";
+import { Redirect, Switch, Route } from "react-router-dom";
+import { css } from "styled-components";
 import SidebarContainer from "./SidebarContainer";
 import MobileTopbarContainer from "./MobileTopbarContainer";
 import One from "./One";
