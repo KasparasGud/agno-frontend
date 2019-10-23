@@ -16,8 +16,9 @@ export const SidebarHeader = ({ children, onClick }) => (
       css={css`
         display: flex;
         flex-grow: 1;
-        justify-content: center;
+        justify-content: flex-start;
         height: 1.25rem;
+        padding-left: 2rem;
       `}
     >
       {children}
@@ -81,6 +82,8 @@ export const Sidebar = ({ children }) => (
       padding-left: env(safe-area-inset-left);
       background-color: #ffffff;
       overflow-y: auto;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
       -webkit-overflow-scrolling: touch;
     `}
   >

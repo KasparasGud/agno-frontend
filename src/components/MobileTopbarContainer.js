@@ -10,6 +10,7 @@ import {
 import { matchPath } from "react-router-dom";
 import useRouter from "use-react-router";
 import { BigLink } from "./BigLink";
+import { ReactComponent as Logo } from "../icons/logo.svg";
 
 const MobileTopbarContainer = ({ logout }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,7 +48,9 @@ const MobileTopbarContainer = ({ logout }) => {
       onRequestOpen={open}
       sidebar={
         <Sidebar>
-          <SidebarHeader onClick={onClick("/dashboard")}>Agno</SidebarHeader>
+          <SidebarHeader onClick={onClick("/dashboard")}>
+            <Logo height="100%" width={undefined} />
+          </SidebarHeader>
           <SidebarMainBlock>
             <BigLink
               active={isActive("/dashboard/one")}

@@ -14,15 +14,17 @@ export const BigLink = ({ icon, count, children, active, ...rest }) => (
       text-decoration: none;
       font-size: 0.9rem;
       margin: 0;
-      padding: 1em 1.5em 1em 2em;
+      padding: 1em 1.5em 1em;
+      padding-left: ${active ? "30px" : "33px"};
       font-weight: 600;
       overflow: hidden;
-      border-top-right-radius: 4px;
-      border-bottom-right-radius: 4px;
-      color: ${active ? "#FFF" : "#000"};
-      background-color: ${active ? "#555" : "#FFF"};
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      color: ${active ? "#1F36AB" : "#333333"};
+      background-color: ${active ? "#e7eafd" : "#FFF"};
       outline: none;
       border: none;
+      border-left: ${active ? "3px solid #1F36AB" : "none"};
       cursor: pointer;
     `}
     {...rest}

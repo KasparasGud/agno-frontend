@@ -47,7 +47,7 @@ const MobileTopbar = ({
           justify-content: space-between;
           flex-direction: row;
           align-items: center;
-          background-color: #000;
+          background-color: #1f36ab;
           color: #fff;
           font-weight: 500;
           flex-shrink: 0;
@@ -118,7 +118,7 @@ const MobileTopbar = ({
                 left: 0;
                 height: 100%;
                 width: 100%;
-                max-width: 18em;
+                max-width: 14em;
                 z-index: 10000;
               `}
               style={props}

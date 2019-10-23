@@ -12,6 +12,7 @@ import useRouter from "use-react-router";
 import { useHistory } from "react-router-dom";
 import { matchPath } from "react-router-dom";
 import useBreakpoints from "../hooks/breakpoint";
+import { ReactComponent as Logo } from "../icons/logo.svg";
 
 const SidebarContainer = ({ logout }) => {
   const { location } = useRouter();
@@ -38,10 +39,14 @@ const SidebarContainer = ({ logout }) => {
         height: 100%;
         flex-shrink: 0;
         background-color: #fff;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
       `}
     >
       <Sidebar>
-        <SidebarHeader onClick={onClick("/dashboard/one")}>Agno</SidebarHeader>
+        <SidebarHeader onClick={onClick("/dashboard/one")}>
+          <Logo height="100%" width={undefined} />
+        </SidebarHeader>
         <SidebarMainBlock>
           <BigLink
             active={isActive("/dashboard/one")}
