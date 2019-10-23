@@ -4,7 +4,7 @@ import { Redirect, Switch, Route } from "react-router-dom";
 import { css } from "styled-components";
 import SidebarContainer from "./SidebarContainer";
 import MobileTopbarContainer from "./MobileTopbarContainer";
-import One from "./One";
+import Overview from "./Overview";
 import Two from "./Two";
 import Three from "./Three";
 import useBreakpoints from "../hooks/breakpoint";
@@ -29,11 +29,15 @@ export default function Home() {
     >
       <Switch>
         <Redirect from="/" exact to="/dashboard" />
-        <Redirect from="/dashboard" exact to="/dashboard/one" />
+        <Redirect from="/dashboard" exact to="/dashboard/overview" />
         <Route path="/dashboard">
           <Switch>
             <Route
-              path={["/dashboard/one", "/dashboard/two", "/dashboard/three"]}
+              path={[
+                "/dashboard/overview",
+                "/dashboard/two",
+                "/dashboard/three"
+              ]}
             >
               <MobileTopbarContainer logout={logoutHandle} />
               <div
@@ -45,10 +49,11 @@ export default function Home() {
                   flex-grow: 1;
                   overflow-y: auto;
                   -webkit-overflow-scrolling: touch;
+                  padding: 1.5em 2em;
                 `}
               >
                 <Switch>
-                  <Route path="/dashboard/one" component={One} />
+                  <Route path="/dashboard/overview" component={Overview} />
                   <Route path="/dashboard/two" component={Two} />
                   <Route path="/dashboard/three" component={Three} />
                 </Switch>
@@ -82,13 +87,14 @@ export default function Home() {
           flex-grow: 1;
           flex: 1;
           -webkit-overflow-scrolling: touch;
+          padding: 1.5em 4em;
         `}
       >
         <Switch>
           <Redirect from="/" exact to="/dashboard" />
-          <Redirect from="/dashboard" exact to="/dashboard/one" />
+          <Redirect from="/dashboard" exact to="/dashboard/overview" />
           <Route path="/dashboard">
-            <Route path="/dashboard/one" component={One} />
+            <Route path="/dashboard/overview" component={Overview} />
             <Route path="/dashboard/two" component={Two} />
             <Route path="/dashboard/three" component={Three} />
           </Route>

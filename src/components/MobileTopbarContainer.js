@@ -25,8 +25,8 @@ const MobileTopbarContainer = ({ logout }) => {
       path
     });
 
-  const title = isActive("/dashboard/one")
-    ? "One"
+  const title = isActive("/dashboard/overview")
+    ? "Overview"
     : isActive("/dashboard/two")
     ? "Two"
     : isActive("/dashboard/three")
@@ -53,10 +53,10 @@ const MobileTopbarContainer = ({ logout }) => {
           </SidebarHeader>
           <SidebarMainBlock>
             <BigLink
-              active={isActive("/dashboard/one")}
-              onClick={onClick("/dashboard/one")}
+              active={isActive("/dashboard/overview")}
+              onClick={onClick("/dashboard/overview")}
             >
-              One
+              Overview
             </BigLink>
             <BigLink
               active={isActive("/dashboard/two")}

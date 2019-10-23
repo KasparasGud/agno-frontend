@@ -44,15 +44,15 @@ const SidebarContainer = ({ logout }) => {
       `}
     >
       <Sidebar>
-        <SidebarHeader onClick={onClick("/dashboard/one")}>
+        <SidebarHeader onClick={onClick("/dashboard/overview")}>
           <Logo height="100%" width={undefined} />
         </SidebarHeader>
         <SidebarMainBlock>
           <BigLink
-            active={isActive("/dashboard/one")}
-            onClick={onClick("/dashboard/one")}
+            active={isActive("/dashboard/overview")}
+            onClick={onClick("/dashboard/overview")}
           >
-            One
+            Overview
           </BigLink>
           <BigLink
             active={isActive("/dashboard/two")}
