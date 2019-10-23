@@ -33,7 +33,6 @@ export const SidebarMainBlock = ({ children }) => (
       flex-shrink: 0;
       padding: 2.5rem 0;
       margin-right: 1rem;
-      border-bottom: 1px solid "#000000";
       flex: 5;
     `}
   >
@@ -80,7 +79,7 @@ export const Sidebar = ({ children }) => (
       padding-top: env(safe-area-inset-top);
       padding-bottom: env(safe-area-inset-bottom);
       padding-left: env(safe-area-inset-left);
-      background-color: "#FFFFFF";
+      background-color: #ffffff;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
     `}

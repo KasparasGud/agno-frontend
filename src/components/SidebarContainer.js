@@ -11,10 +11,16 @@ import { BigLink } from "./BigLink";
 import useRouter from "use-react-router";
 import { useHistory } from "react-router-dom";
 import { matchPath } from "react-router-dom";
+import useBreakpoints from "../hooks/breakpoint";
 
 const SidebarContainer = ({ logout }) => {
   const { location } = useRouter();
   const history = useHistory();
+  const breakPoint = useBreakpoints();
+
+  if (breakPoint === "sm" || breakPoint === "xs") {
+    return null;
+  }
 
   const isActive = path =>
     !!matchPath(location.pathname, {
@@ -31,6 +37,7 @@ const SidebarContainer = ({ logout }) => {
         width: 14em;
         height: 100%;
         flex-shrink: 0;
+        background-color: #fff;
       `}
     >
       <Sidebar>

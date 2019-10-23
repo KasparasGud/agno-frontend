@@ -10,6 +10,8 @@ const GlobalStyle = createGlobalStyle`
   html {
     height: 100%; 
     width: 100%;
+    overflow: hidden;
+    touch-action: none;
   }
   body {
     display: flex;
