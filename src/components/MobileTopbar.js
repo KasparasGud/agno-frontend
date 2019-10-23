@@ -47,10 +47,12 @@ const MobileTopbar = ({
           justify-content: space-between;
           flex-direction: row;
           align-items: center;
-          background-color: #1f36ab;
+          background-color: #fff;
           color: #fff;
           font-weight: 500;
           flex-shrink: 0;
+          box-shadow: 2px 2px 10px #00000025;
+          border-bottom: 1px solid #ddd;
           padding-top: env(safe-area-inset-top);
           padding-left: env(safe-area-inset-left);
           padding-right: env(safe-area-inset-right);
@@ -73,9 +75,9 @@ const MobileTopbar = ({
         >
           <Hamburger
             css={css`
-              height: 0.8em;
+              height: 0.6em;
               opacity: 0.4;
-              stroke: #fff;
+              stroke: #333;
             `}
           />
         </div>

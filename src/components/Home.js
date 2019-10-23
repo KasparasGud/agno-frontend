@@ -50,6 +50,7 @@ export default function Home() {
                   overflow-y: auto;
                   -webkit-overflow-scrolling: touch;
                   padding: 1.5em 2em;
+                  background-color: #f4f5fa;
                 `}
               >
                 <Switch>

@@ -25,14 +25,6 @@ const MobileTopbarContainer = ({ logout }) => {
       path
     });
 
-  const title = isActive("/dashboard/overview")
-    ? "Overview"
-    : isActive("/dashboard/two")
-    ? "Two"
-    : isActive("/dashboard/three")
-    ? "Three"
-    : "";
-
   const onClick = path => () => {
     history.push(path);
     setIsOpen(false);
@@ -77,7 +69,7 @@ const MobileTopbarContainer = ({ logout }) => {
         </Sidebar>
       }
       avatarUrl={""}
-      title={title}
+      title={<Logo height="50%" width={undefined} />}
     />
   );
 };

@@ -4,9 +4,9 @@ import throttle from "lodash.throttle";
 const getDeviceConfig = width => {
   if (width < 320) {
     return "xs";
-  } else if (width >= 320 && width < 720) {
+  } else if (width >= 320 && width < 860) {
     return "sm";
-  } else if (width >= 720 && width < 1024) {
+  } else if (width >= 860 && width < 1024) {
     return "md";
   } else if (width >= 1024) {
     return "lg";
