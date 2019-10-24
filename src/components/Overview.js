@@ -3,6 +3,8 @@ import React from "react";
 import { css } from "styled-components";
 import useBreakpoints from "../hooks/breakpoint";
 import ListItem from "./ListItem";
+import { RadarChart, CircularGridLines } from "react-vis";
+import "react-vis/dist/style.css";
 
 const recentActivity = [
   { title: "Emotion logged", subtitle: " 13 seconds ago" },
@@ -11,6 +13,20 @@ const recentActivity = [
   { title: "Emotion logged", subtitle: " 2 hours ago" },
   { title: "Emotion logged", subtitle: " 17 hours ago" },
   { title: "Emotion logged", subtitle: " 3 days ago" }
+];
+
+const DATA = [
+  {
+    name: "Emotions",
+    sad: 5,
+    happy: 4,
+    fear: 0,
+    disgust: 4,
+    anger: 5,
+    suprise: 3,
+    fill: "#1F36AB",
+    stroke: "#1F36AB"
+  }
 ];
 
 const Overview = () => {
@@ -49,7 +65,7 @@ const Overview = () => {
           <div
             css={css`
               font-weight: 600;
-              font-size: 0.75em;
+              font-size: ${breakPoint === "xs" ? "0.6em" : "0.75em"};
               max-width: 45%;
             `}
           >
@@ -59,12 +75,16 @@ const Overview = () => {
             alt=""
             css={css`
               position: absolute;
-              height: ${breakPoint === "xs" || breakPoint === "sm"
+              height: ${breakPoint === "sm"
                 ? "12rem"
+                : breakPoint === "xs"
+                ? "8.5rem"
                 : "19rem"};
               right: 0;
-              bottom: ${breakPoint === "xs" || breakPoint === "sm"
+              bottom: ${breakPoint === "sm"
                 ? "-1rem"
+                : breakPoint === "xs"
+                ? "0.75rem"
                 : "-3.5rem"};
             `}
             src={require("../assets/nothing.png")}
@@ -84,9 +104,80 @@ const Overview = () => {
             css={css`
               font-weight: 800;
               font-size: 0.65em;
+              margin-bottom: 2em;
             `}
           >
             Emotion graph
+          </div>
+          <div
+            css={css`
+              display: flex;
+              flex: 1;
+              align-items: center;
+              justify-content: center;
+            `}
+          >
+            <RadarChart
+              css={css`
+                font-weight: 600;
+                font-size: 0.5em;
+                color: #333;
+                justify-content: center;
+              `}
+              style={{
+                polygons: {
+                  strokeWidth: 2,
+                  strokeOpacity: 0.8,
+                  fillOpacity: 0.2,
+                  color: "#000"
+                },
+                labels: {
+                  textAnchor: "middle"
+                },
+                axes: {
+                  line: {
+                    fillOpacity: 0.5,
+                    strokeWidth: 0.5,
+                    strokeOpacity: 0.8
+                  },
+                  ticks: {
+                    fillOpacity: 0,
+                    strokeOpacity: 0
+                  }
+                }
+              }}
+              margin={{
+                left: 60,
+                top: 30,
+                bottom: 30,
+                right: 60
+              }}
+              tickFormat={t => ""}
+              data={DATA}
+              startingAngle={0}
+              domains={[
+                { name: "Sad", domain: [0, 7], getValue: d => d.sad },
+                {
+                  name: "Happy",
+                  domain: [0, 7],
+                  getValue: d => d.happy
+                },
+                { name: "Fearful", domain: [0, 7], getValue: d => d.fear },
+                {
+                  name: "Disgusted",
+                  domain: [0, 7],
+                  getValue: d => d.disgust
+                },
+                { name: "Angry", domain: [0, 7], getValue: d => d.anger },
+                { name: "Suprised", domain: [0, 7], getValue: d => d.suprise }
+              ]}
+              width={400}
+              height={400}
+            >
+              <CircularGridLines
+                tickValues={[...new Array(10)].map((v, i) => i / 10 - 1)}
+              />
+            </RadarChart>
           </div>
         </div>
         <div

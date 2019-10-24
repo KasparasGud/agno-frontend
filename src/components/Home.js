@@ -44,7 +44,7 @@ export default function Home() {
                   -webkit-overflow-scrolling: touch;
                   padding: 1.5em 2em;
                   padding: ${breakPoint === "xs" || breakPoint === "sm"
-                    ? "1.5em 1em"
+                    ? "1.5em 0.75em"
                     : "1.5em 2em"};
                   background-color: #f4f5fa;
                 `}

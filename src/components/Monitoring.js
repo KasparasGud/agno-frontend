@@ -38,25 +38,27 @@ const Monitoring = () => {
         >
           <div
             css={css`
-              font-weight: 600;
-              font-size: 0.75em;
-              max-width: 45%;
+              font-weight: 500;
+              font-size: ${breakPoint === "xs" ? "0.6em" : "0.75em"};
+              max-width: 40%;
             `}
           >
-            Based on emotions in last 2 months you seem to have depressive
-            tendencies
+            Based on emotions in last 2 months you seem to be depressive
           </div>
           <img
             alt=""
             css={css`
               position: absolute;
-              right: 0.5rem;
-              height: ${breakPoint === "xs" || breakPoint === "sm"
+              height: ${breakPoint === "sm"
                 ? "12rem"
+                : breakPoint === "xs"
+                ? "8.5rem"
                 : "19rem"};
               right: 0;
-              bottom: ${breakPoint === "xs" || breakPoint === "sm"
+              bottom: ${breakPoint === "sm"
                 ? "-1rem"
+                : breakPoint === "xs"
+                ? "0.75rem"
                 : "-3.5rem"};
             `}
             src={require("../assets/sad.png")}
