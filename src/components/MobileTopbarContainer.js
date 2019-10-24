@@ -30,7 +30,7 @@ const MobileTopbarContainer = ({ logout }) => {
     setIsOpen(false);
   };
 
-  if (breakPoint === "md" || breakPoint === "lg") {
+  if (breakPoint === "lg") {
     return null;
   }
   return (
@@ -51,16 +51,10 @@ const MobileTopbarContainer = ({ logout }) => {
               Overview
             </BigLink>
             <BigLink
-              active={isActive("/dashboard/two")}
-              onClick={onClick("/dashboard/two")}
+              active={isActive("/dashboard/monitoring")}
+              onClick={onClick("/dashboard/monitoring")}
             >
-              Two
-            </BigLink>
-            <BigLink
-              active={isActive("/dashboard/three")}
-              onClick={onClick("/dashboard/three")}
-            >
-              Three
+              Monitoring
             </BigLink>
           </SidebarMainBlock>
           <SidebarFooter>

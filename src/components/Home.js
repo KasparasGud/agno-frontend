@@ -5,9 +5,8 @@ import { css } from "styled-components";
 import SidebarContainer from "./SidebarContainer";
 import MobileTopbarContainer from "./MobileTopbarContainer";
 import Overview from "./Overview";
-import Two from "./Two";
-import Three from "./Three";
 import useBreakpoints from "../hooks/breakpoint";
+import Monitoring from "./Monitoring";
 
 export default function Home() {
   const [logout, setLogout] = useState(false);
@@ -32,13 +31,7 @@ export default function Home() {
         <Redirect from="/dashboard" exact to="/dashboard/overview" />
         <Route path="/dashboard">
           <Switch>
-            <Route
-              path={[
-                "/dashboard/overview",
-                "/dashboard/two",
-                "/dashboard/three"
-              ]}
-            >
+            <Route path={["/dashboard/overview", "/dashboard/monitoring"]}>
               <MobileTopbarContainer logout={logoutHandle} />
               <div
                 css={css`
@@ -50,13 +43,15 @@ export default function Home() {
                   overflow-y: auto;
                   -webkit-overflow-scrolling: touch;
                   padding: 1.5em 2em;
+                  padding: ${breakPoint === "xs" || breakPoint === "sm"
+                    ? "1.5em 1em"
+                    : "1.5em 2em"};
                   background-color: #f4f5fa;
                 `}
               >
                 <Switch>
                   <Route path="/dashboard/overview" component={Overview} />
-                  <Route path="/dashboard/two" component={Two} />
-                  <Route path="/dashboard/three" component={Three} />
+                  <Route path="/dashboard/monitoring" component={Monitoring} />
                 </Switch>
               </div>
             </Route>
@@ -96,8 +91,7 @@ export default function Home() {
           <Redirect from="/dashboard" exact to="/dashboard/overview" />
           <Route path="/dashboard">
             <Route path="/dashboard/overview" component={Overview} />
-            <Route path="/dashboard/two" component={Two} />
-            <Route path="/dashboard/three" component={Three} />
+            <Route path="/dashboard/monitoring" component={Monitoring} />
           </Route>
         </Switch>
       </div>
@@ -106,7 +100,7 @@ export default function Home() {
 
   return logout ? (
     <Redirect to="/login" />
-  ) : breakPoint === "md" || breakPoint === "lg" ? (
+  ) : breakPoint === "lg" ? (
     <Dashboard />
   ) : (
     <Vertical />

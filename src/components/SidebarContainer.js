@@ -19,7 +19,7 @@ const SidebarContainer = ({ logout }) => {
   const history = useHistory();
   const breakPoint = useBreakpoints();
 
-  if (breakPoint === "sm" || breakPoint === "xs") {
+  if (breakPoint !== "lg") {
     return null;
   }
 
@@ -55,16 +55,10 @@ const SidebarContainer = ({ logout }) => {
             Overview
           </BigLink>
           <BigLink
-            active={isActive("/dashboard/two")}
-            onClick={onClick("/dashboard/two")}
+            active={isActive("/dashboard/monitoring")}
+            onClick={onClick("/dashboard/monitoring")}
           >
-            Two
-          </BigLink>
-          <BigLink
-            active={isActive("/dashboard/three")}
-            onClick={onClick("/dashboard/three")}
-          >
-            Three
+            Monitoring
           </BigLink>
         </SidebarMainBlock>
         <SidebarFooter>
