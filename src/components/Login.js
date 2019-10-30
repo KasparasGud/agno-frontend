@@ -97,10 +97,10 @@ const Login = () => {
       <Logo
         css={css`
           position: absolute;
-          top: 1rem;
-          left: 1rem;
+          top: 1.75rem;
+          left: 1.75rem;
         `}
-        height="5%"
+        height="3.35%"
         width={undefined}
       />
       {breakPoint === "lg" && (

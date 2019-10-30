@@ -99,7 +99,7 @@ export default function Home() {
   );
 
   return logout ? (
-    <Redirect to="/login" />
+    <Redirect to="/" />
   ) : breakPoint === "lg" ? (
     <Dashboard />
   ) : (

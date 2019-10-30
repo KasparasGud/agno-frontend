@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
 import Home from "./components/Home";
 import Login from "./components/Login";
+import Landing from "./components/Landing";
 import { PrivateRoute } from "./components/PrivateRoute";
 import NotFound from "./components/NotFound";
 
@@ -34,6 +35,7 @@ const GlobalStyle = createGlobalStyle`
     flex: 1;
     flex-direction: column;
     height: 100%;
+    overflow: auto;
   }
 `;
 
@@ -43,6 +45,7 @@ const App = () => (
     <BrowserRouter>
       <Switch>
         <Route exact path="/login" component={Login} />
+        <Route exact path="/home" component={Landing} />
         <Route exact path="/">
           <Redirect from="/" to="/dashboard" />
         </Route>
