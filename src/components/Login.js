@@ -79,8 +79,8 @@ const Login = () => {
   const handleSubmit = () => {
     if (email === "admin" && password === "admin") {
       localStorage.setItem("authToken", "yes");
+      setRedirect(true);
     }
-    setRedirect(true);
   };
 
   return redirect ? (
@@ -162,7 +162,7 @@ const Login = () => {
             Are you on the guest list?
           </div>
         </div>
-        <div
+        <form
           css={css`
             display: flex;
             flex-direction: column;
@@ -172,21 +172,21 @@ const Login = () => {
           `}
         >
           <Input
-            placeholder="Email"
+            placeholder="Email (Hint: admin)"
             value={email}
             onChange={e => setEmail(e.target.value)}
             type="text"
           />
 
           <Input
-            placeholder="Password"
+            placeholder="Password (Hint: admin)"
             value={password}
             onChange={e => setPassword(e.target.value)}
             type="password"
           />
 
           <Button onClick={handleSubmit}>Login</Button>
-        </div>
+        </form>
       </div>
     </div>
   );
